@@ -20,7 +20,7 @@
             </div>
         </div>
     </div> -->
-    <div class="olv-breadcumb-area" style="background-image: url({{ asset('user/img/core-img/b.png') }});">
+    <div class="olv-breadcumb-area" style="background-image: url({{ asset('assets/user/img/core-img/b.png') }});">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12">

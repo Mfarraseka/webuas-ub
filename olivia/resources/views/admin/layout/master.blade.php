@@ -13,19 +13,19 @@
   <title>OliviaDev</title>
 
   <!-- Custom fonts for this template-->
-  <link href="{{ asset('admin/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
+  <link href="{{ asset('assets/admin/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template-->
-  <link href="{{ asset('admin/css/sb-admin-2.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/admin/css/sb-admin-2.min.css') }}" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
   <!-- bootstrap -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-  <!-- <link rel="stylesheet" href="{{ asset('admin/vendor/bootstrap/css/bootstrap.min.css')}}"> -->
+  <!-- <link rel="stylesheet" href="{{ asset('assets/admin/vendor/bootstrap/css/bootstrap.min.css')}}"> -->
     <!-- Fontastic Custom icon font-->
-    <!-- <link rel="stylesheet" href="{{ asset('admin/css/fontastic.css')}}"> -->
-    <!-- <link rel="stylesheet" href="{{ asset('admin/css/style.default.css')}}" id="theme-stylesheet"> -->
-    <link href="{{ asset('admin/css/dashboard-custom.css') }}" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="{{ asset('assets/admin/css/fontastic.css')}}"> -->
+    <!-- <link rel="stylesheet" href="{{ asset('assets/admin/css/style.default.css')}}" id="theme-stylesheet"> -->
+    <link href="{{ asset('assets/admin/css/dashboard-custom.css') }}" rel="stylesheet">
   @yield('css-custom')
 
 </head>
@@ -67,7 +67,7 @@
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon rotate-n-15">
-        <img src="{{ asset('user/img/core-img/fix.png') }}" alt="" style =" width :40px ; height : 40px;">
+        <img src="{{ asset('assets/user/img/core-img/fix.png') }}" alt="" style =" width :40px ; height : 40px;">
         </div>
         <div class="sidebar-brand-text mx-3">OliviaDev</sup></div>
       </a>
@@ -310,24 +310,24 @@
   </div>
 
   <!-- Bootstrap core JavaScript-->
-  <script src="{{ asset('admin/vendor/jquery/jquery.min.js') }}"></script>
-  <script src="{{ asset('admin/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ asset('assets/admin/vendor/jquery/jquery.min.js') }}"></script>
+  <script src="{{ asset('assets/admin/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
   <!-- Core plugin JavaScript-->
-  <script src="{{ asset('admin/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+  <script src="{{ asset('assets/admin/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 
   <!-- Custom scripts for all pages-->
-  <script src="{{ asset('admin/js/sb-admin-2.min.js') }}"></script>
+  <script src="{{ asset('assets/admin/js/sb-admin-2.min.js') }}"></script>
 
   <!-- Page level plugins -->
-  <!-- <script src="{{ asset('admin/vendor/chart.js/Chart.min.js') }}"></script> -->
+  <!-- <script src="{{ asset('assets/admin/vendor/chart.js/Chart.min.js') }}"></script> -->
 
   <!-- Page level custom scripts -->
-  <!-- <script src="{{ asset('admin/js/demo/chart-area-demo.js') }}"></script>
-  <script src="{{ asset('admin/js/demo/chart-pie-demo.js') }}"></script> -->
+  <!-- <script src="{{ asset('assets/admin/js/demo/chart-area-demo.js') }}"></script>
+  <script src="{{ asset('assets/admin/js/demo/chart-pie-demo.js') }}"></script> -->
   <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
-  <script src="{{ asset('node_modules/tinymce/tinymce.js') }}"></script>
-  <script src="{{ asset('tinymcs.js') }}"></script>
+  <script src="{{ asset('assets/node_modules/tinymce/tinymce.js') }}"></script>
+  <script src="{{ asset('assets/tinymcs.js') }}"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   <!-- untuk js ajax -->
   @yield('js-ajax')

@@ -3,7 +3,7 @@
 <title>Galeri</title>
 @endsection
 @section('content')
-<div class="olv-breadcumb-area" style="background-image: url({{ asset('user/img/core-img/b.png') }});">
+<div class="olv-breadcumb-area" style="background-image: url({{ asset('assets/user/img/core-img/b.png') }});">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12">
@@ -38,24 +38,25 @@
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div class="olv-portfolio">
-            @foreach ($data as $foto)
-            <?php foreach(json_decode($foto->foto)as $picture) { ?>
-                <div class="single_gallery_item {{$foto->tahun}}">
-                <img src="{{ asset('image/galeri/foto')}}/{{$picture}}">
-                <div class="gallery-hover-overlay d-flex align-items-center justify-content-center">
-                    <div class="port-hover-text text-center">
-                        <h4>{{$foto->nama}}</h4>
-                        <a href="#">OLIVIA</a>
+            <div class="olv-portfolio">
+                @foreach ($data as $foto)
+                <?php { ?>
+                    <div class="single_gallery_item {{$foto->tahun}}">
+                    <img src="{{ asset('assets/image/galeri/foto')}}/{{$foto->foto}}">
+                    <div class="gallery-hover-overlay d-flex align-items-center justify-content-center">
+                        <div class="port-hover-text text-center">
+                            <h4>{{$foto->nama}}</h4>
+                            {{-- <a href="#">OLIVIA</a> --}}
+                        </div>
                     </div>
                 </div>
+                <?php } ?>
+                @endforeach
+                
             </div>
-            <?php } ?>
-            @endforeach
-            
         </div>
+
+        
         <!-- <div class="text-center mt-100">
         <button data-filter="*" class="btn olv-btn">Load More</button>
         </div> -->

@@ -372,7 +372,7 @@ img {
 }
 
 .menu_area #nav .nav-link {
-    color: #fff;
+    color: #000;
     display: block;
     font-size: 15px;
     -webkit-transition-duration: 500ms;
@@ -450,7 +450,7 @@ img {
 /* Sticky CSS */
 
 .header_area.sticky {
-    background-color: #5f73a2;
+    background-color: #2AABE4;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
     height: 80px;
     position: fixed;
@@ -870,7 +870,7 @@ img {
 }
 
 .single-accordion h6 a.collapsed {
-    background-color: #5f73a2;
+    background-color: #2AABE4;
     color: #fff;
 }
 
@@ -1746,6 +1746,37 @@ span.accor-open {
 .custom-upload__button .fa.fa-file-image-o {
   font-family: FontAwesome;
 }
+.img-mockup{
+    position: absolute;
+    left: -320px;
+    top: -360px;
+}
+.hero-text{
+    color: #fff;
+    padding-top: 100px;
+}
+.hero-text h2{
+    font-weight: 500;
+    font-size: 38px;
+    line-height: 42px;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+.hero-text p{
+    font-size: 16px;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+.btn-bp {
+    width: auto !important;
+    background-color: #fff !important;
+    color: #2AABE4 !important;
+    border-radius: 40px !important;
+    font-size: 18px;
+    padding: 8px 30px 8px 30px !important;
+    /* height: 100%; */
+}
+
 
 /* --------------------------------
 ============= The End =============

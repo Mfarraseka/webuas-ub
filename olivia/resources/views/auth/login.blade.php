@@ -7,7 +7,7 @@
   <link href='https://fonts.googleapis.com/css?family=Forum&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="{{ asset('user/css/login.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('assets/user/css/login.css') }}">
   <link rel="icon" href="{{ asset('user/img/core-img/atomic.png') }}">
 </head>
 

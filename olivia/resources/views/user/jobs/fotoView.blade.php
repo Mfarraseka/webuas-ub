@@ -2,7 +2,7 @@
 @foreach ($data as $foto)
 <?php foreach(json_decode($foto->foto)as $picture) { ?>
     <div class="single_gallery_item 18">
-    <img src="{{ asset('image/galeri/foto')}}/{{$picture}}">
+    <img src="{{ asset('assets/image/galeri/foto')}}/{{$picture}}">
     <div class="gallery-hover-overlay d-flex align-items-center justify-content-center">
         <div class="port-hover-text text-center">
             <h4>{{$foto->nama}}</h4>
@@ -12,7 +12,7 @@
 </div>
 <?php } ?>
 <!-- <div class="single_gallery_item 18">
-    <img src="{{ asset('user/img/gall-img/2018a/1.jpg') }}">
+    <img src="{{ asset('assets/user/img/gall-img/2018a/1.jpg') }}">
     <div class="gallery-hover-overlay d-flex align-items-center justify-content-center">
         <div class="port-hover-text text-center">
             <h4>DOKUMENTASI</h4>

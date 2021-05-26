@@ -14,13 +14,15 @@
     @yield('title')
 
     <!-- Favicon -->
-    <link rel="icon" href="{{ asset('user/img/fix.svg') }}">
+    <link rel="icon" href="{{ asset('ubicon.png') }}">
 
     <!-- Core Stylesheet -->
-    <link href="{{ asset('user/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/user/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/user/custom.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
     <!-- Responsive CSS -->
-    <link href="{{ asset('user/css/responsive.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/user/css/responsive.css') }}" rel="stylesheet">
 
 </head>
 
@@ -66,7 +68,7 @@
                         <nav class="navbar h-100 navbar-expand-lg align-items-center">
                             <!-- Logo -->
                             <!-- <a class="navbar-brand" href="{{ url('/') }}"><h2 class="text text-color-white">VASHE</h2></a> -->
-                            <a class="navbar-brand" href="{{ url('/') }}"><img src="{{asset('user/img/core-img/fix.png')}}" width="70" height="70"></a>
+                            <a class="navbar-brand" href="{{ url('/') }}"><img src="{{asset('ubicon.png')}}" width="200" height="100"></a>
 
                             <!-- Menu Area -->
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#olv-navbar" aria-controls="olv-navbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -104,7 +106,7 @@
                                 </div>
                                 <!-- Search btn -->
                                 <div class="search-button">
-                                    <a href="#" id="search-btn"><img src="{{ asset('user/img/core-img/search-icon.png') }}" alt="Search"></a>
+                                    <a href="#" id="search-btn"><img src="{{ asset('assets/user/img/core-img/search-icon.png') }}" alt="Search"></a>
                                 </div>
                                 <div class="login-register-btn">
                                 <!-- jika user tidak auth -->
@@ -157,88 +159,54 @@
     
     @yield('content')
     
-    <footer class="footer-area clearfix">
-        <section id="contact">
-  
-          <h1 class="section-header"></h1>
-          
-          <div class="contact-wrapper">
-            
-              <!---------------- 
-
-              CONTACT KIRI 
-            
-              -----------------> 
-            
-            <form class="form-horizontal" role="form" method="post" action="contact.php">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11176.264540637865!2d112.61440279667983!3d-7.956904248467246!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x11a949e002df2194!2sPendidikan%20Vokasi%20Universitas%20Brawijaya!5e0!3m2!1sid!2sid!4v1601097931634!5m2!1sid!2sid" width="400" height="390" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>              
-            </form>
-            
-              <!---------------- 
-
-              CONTACT KANAN
-            
-              -----------------> 
-            
-              <div class="direct-contact-container justify-content-center">
-
-                <ul class="contact-list">
-                  <li class="list-item"><i class="fa fa-map-marker fa-2x"><span class="contact-text place">Jl Veteran | Malang</span></i></li>
-                  
-                  <li class="list-item"><i class="fa fa-phone fa-2x"><span class="contact-text phone"><a href="tel:1-212-555-5555" title="Give me a call"> (0341) 553240</a></span></i></li>
-                  
-                  <li class="list-item"><i class="fa fa-envelope fa-2x"><span class="contact-text gmail"><a href="mailto:#" title="Send me an email">emailvokasi@gmail.com</a></span></i></li>
-                  
-                </ul>
-
-                <hr>
-                <ul class="social-media-list">
-                  @foreach($sosial as $media)
-                  <!-- <li> -->
-                     <a href="{{$media->url}}" target="_blank" class="contact-icon">
-                        <i class="fa {{$media->icon}}" aria-hidden="true"></i>
-                     </a>
-                  <!-- </li> -->
-                  @endforeach
-                </ul>
-                <hr>
-
-                <div class="copyright" style="color:#b5a8a8;">www.oliviadev.my.id</div>
-
-              </div>
-            
-          </div>
-          
-        </section>  
-        
-        
-        <div class="footer-bottom-area">
-            <div class="container h-100">
-                <div class="row h-100">
-                    <div class="col-12 h-100">
-                        <div class="footer-bottom-content h-100 d-md-flex justify-content-between align-items-center">
-                            <div class="copyright-text">
-                                <p style="color:#b5a8a8;" >
-                                    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Vokasi UB </i> 
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+   
+<div class="container wrapper-ft">
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="ft-img">
+                <img src="{{ asset('assets/logo.png') }}" alt="">
+                <p style="text-align:center">UB © Content 2021. All rights reserved</p>
             </div>
+            
         </div>
-    </footer>
+        <div class="col-lg-3">
+            <h6 style="font-weight: 600; color: #191919; margin-bottom:25px">Others</h6>
+            <ul class="list-unstyled">
+                <li><a href="">Privacy Policy</a></li>
+                <li><a href="">Terms & Condition</a></li>
+                <li><a href="">About Us</a></li>
+                <li><a href="">FAQ</a></li>
+            </ul>
+        </div>
+        <div class="col-lg-3 d-none d-sm-block">
+            <h6 style="font-weight: 600; color: #191919; margin-bottom:25px">Contact Us</h6>
+            <ul class="list-unstyled">
+                <li><a href=""><i class="fa fa-envelope"></i>&nbsp; ub@gmail.com</a></li>
+                <li><a href=""><i class="fa fa-phone" ></i>&nbsp; +62 812 554 876 90</a></li>
+                {{-- <li><a href=""><i class="fa fa-whatsapp" ></i>&nbsp; +62 812 554 876 90</a></li> --}}
+            </ul>
+        </div>
+        <div class="col-lg-3">
+        <h6 style="font-weight: 600; color: #191919; margin-bottom:25px">Follow Us</h6>
+            <ul class="list-unstyled">
+                <li><a href=""><i class="fa fa-instagram"></i>&nbsp; Instagram</a></li>
+                <li><a href=""><i class="fa fa-facebook" ></i>&nbsp; Facebook</a></li>
+                <!-- <li><a href=""><i class="fa fa-whatsapp" ></i>&nbsp; +62 813 591 973 60</a></li> -->
+            </ul>
+        </div>
+    </div>
+</div>
     
     <!-- jQuery-2.2.4 js -->
-    <script src="{{ asset('user/js/jquery-2.2.4.min.js') }}"></script>
+    <script src="{{ asset('assets/user/js/jquery-2.2.4.min.js') }}"></script>
     <!-- Popper js -->
-    <script src="{{ asset('user/js/popper.min.js') }}"></script>
+    <script src="{{ asset('assets/user/js/popper.min.js') }}"></script>
     <!-- Bootstrap js -->
-    <script src="{{ asset('user/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/user/js/bootstrap.min.js') }}"></script>
     <!-- All Plugins js -->
-    <script src="{{ asset('user/js/plugins.js') }}"></script>
+    <script src="{{ asset('assets/user/js/plugins.js') }}"></script>
     <!-- Active js -->
-    <script src="{{ asset('user/js/active.js') }}"></script>
+    <script src="{{ asset('assets/user/js/active.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     @yield('js-user')
     <!-- custom file -->
