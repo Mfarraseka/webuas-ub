@@ -131,5 +131,5 @@
 </div>
 @endsection
 @section('js-ajax')
-<script src="{{ asset('admin/js/berita.js') }}"></script>
+<script src="{{ asset('assets/admin/js/berita.js') }}"></script>
 @endsection

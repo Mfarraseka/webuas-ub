@@ -99,5 +99,5 @@
 </div>
 @endsection
 @section('js-ajax')
-<script src="{{ asset('admin/js/profil/visimisi.js') }}"></script>
+<script src="{{ asset('assets/admin/js/profil/visimisi.js') }}"></script>
 @endsection

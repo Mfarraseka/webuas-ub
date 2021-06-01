@@ -161,5 +161,5 @@
 </div>
 @endsection
 @section('js-ajax')
-<script src="{{ asset('admin/js/lomba.js') }}"></script>
+<script src="{{ asset('assets/admin/js/lomba.js') }}"></script>
 @endsection

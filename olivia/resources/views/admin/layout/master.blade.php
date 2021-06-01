@@ -10,7 +10,7 @@
   <meta name="author" content="">
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
-  <title>OliviaDev</title>
+  <title>Universitas Brawijaya</title>
 
   <!-- Custom fonts for this template-->
   <link href="{{ asset('assets/admin/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
@@ -66,10 +66,7 @@
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-        <div class="sidebar-brand-icon rotate-n-15">
-        <img src="{{ asset('assets/user/img/core-img/fix.png') }}" alt="" style =" width :40px ; height : 40px;">
-        </div>
-        <div class="sidebar-brand-text mx-3">OliviaDev</sup></div>
+        <div class="sidebar-brand-text mx-3">Universitas Brawijaya </sup></div>
       </a>
 
       <!-- Divider -->

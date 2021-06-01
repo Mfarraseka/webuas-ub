@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Hash;
+use File;
 
 class AkunController 
 {
@@ -74,6 +75,32 @@ class AkunController
         $passwordLama = $request->password_lama;
         $passwordBaru = $request->password_baru;
         $passwordSekarang = auth()->user()->password;
+        $nama = $request->nama;
+        $gambar = $request->file('gambar');
+        if($gambar) {
+                    $namaOriFile = $gambar->getClientOriginalName();
+                    $fileName = time().'_'.$namaOriFile;
+                    $filePath = "assets/image/akun";
+                    $gambar->move($filePath, $fileName);
+                    //hapus file
+                    $gambarPathHapus = DB::table('users')->where('id', auth()->user()->id)->value('gambar');
+                    File::delete($gambarPathHapus);
+                    try {
+                        DB::table('users')->where('id', auth()->user()->id)->update(['gambar' => $filePath."/".$fileName]);
+                        return response()->json([
+                            'status' => 'ok'
+                        ]);
+                    } catch (\Throwable $th) {
+                        return response()->json([
+                            'status' => 'gagal'
+                        ]);
+                    }
+        } else if($nama != null) {
+            DB::table('users')->where('id', auth()->user()->id)->update(['name' => $nama]);
+            return response()->json([
+                'status' => 'ok'
+            ]);
+        } else {
         $cek = Hash::check($passwordLama, $passwordSekarang);
         if($cek) {
             $cekInput = DB::table('users')->where('id', auth()->user()->id)->update([
@@ -88,6 +115,7 @@ class AkunController
         return response()->json([
             'status' => 'salah'
         ]);
+        }
     }
 
     /**

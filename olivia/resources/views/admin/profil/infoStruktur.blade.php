@@ -122,5 +122,5 @@
 </div>
 @endsection
 @section('js-ajax')
-<script src="{{ asset('admin/js/profil/info-struktur.js') }}"></script>
+<script src="{{ asset('assets/admin/js/profil/info-struktur.js') }}"></script>
 @endsection

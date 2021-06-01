@@ -72,5 +72,5 @@
 </div>
 @endsection
 @section('js-ajax')
-<script src="{{ asset('admin/js/artikel.js') }}"></script>
+<script src="{{ asset('assets/admin/js/artikel.js') }}"></script>
 @endsection

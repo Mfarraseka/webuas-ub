@@ -4,7 +4,7 @@
 <!-- <link href="{{ asset('user/style.css') }}" rel="stylesheet"> -->
 
 <!-- Responsive CSS -->
-<link href="{{ asset('admin/css/akun.css') }}" rel="stylesheet">
+<link href="{{ asset('assets/admin/css/akun.css') }}" rel="stylesheet">
 @endsection
 @section('content')
 
@@ -31,7 +31,7 @@
                                           <div class="col-md-6">
                                             <div class="form-group bmd-form-group">
                                               <!-- <label class="bmd-label-floating">Fist Name</label>/ -->
-                                              <input type="text" class="form-control" placeholder="Nama"value="{{$data[0]->name }}">
+                                              <input type="text" class="form-control" placeholder="Nama" name="nama" value="{{$data[0]->name }}">
                                             </div>
                                           </div>
                                           
@@ -67,7 +67,7 @@
                                               <div class="form-group bmd-form-group">
                                                 <div class="custom-upload">
                                                     <label class="btn btn-primary btn-round" for="file" data-element="custom-upload-button">Upload Files </label>
-                                                    <input class="custom-upload__input" id="file" type="file" data-behaviour="custom-upload-input" value="" multiple />
+                                                    <input class="custom-upload__input" id="file" type="file" data-behaviour="custom-upload-input" value="" multiple name="gambar"/>
                                                 </div>
                                               </div>
                                             </div>
@@ -117,17 +117,12 @@
         var password_lama = $('input[name=password-lama]').val();
         var password_baru = $('input[name=password-baru]').val();
         var password_confirm = $('input[name=password-confirm]').val();
-        
-        formData.append('password_lama', password_lama);
-        formData.append('password_baru', password_baru);
-        if(password_lama == '' || password_confirm == '' || password_baru == '') {
-          Swal.fire({
-                        icon: 'error',
-                        title: 'COBA KEMBALI',
-                        text: 'SEMUA WAJIB DI ISI !',
-                          });
-        } else if(password_baru == password_confirm) {
-        $.ajax({
+        var nama = $('input[name=nama]').val();
+        var gambar = $('#file')[0].files[0];
+        // console.log(gambar)
+        if(gambar) {
+          formData.append("gambar", gambar);
+          $.ajax({
             type: 'POST',
             url: '/admin/akun',
             data: formData,
@@ -141,7 +136,53 @@
                         text: 'Berhasil Di ubah',
                           });
               } else if(data.status == 'salah') {
-                alert('password mu lo salah cok!')
+                alert('password mu salah!'+ data.msg)
+              }
+            }
+        });
+        } else if(password_lama == '' || password_confirm == '' || password_baru == '') {
+          // Swal.fire({
+          //               icon: 'error',
+          //               title: 'COBA KEMBALI',
+          //               text: 'SEMUA WAJIB DI ISI !',
+          //                 });
+          formData.append('nama', nama);
+          $.ajax({
+            type: 'POST',
+            url: '/admin/akun',
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function(data) {
+              if(data.status == 'ok') {
+                Swal.fire({
+                        icon: 'success',
+                        title: 'BERHASIL',
+                        text: 'Berhasil Di ubah',
+                          });
+              } else if(data.status == 'salah') {
+                alert('password mu salah!')
+              }
+            }
+        });
+        } else if(password_baru == password_confirm) {
+        formData.append('password_lama', password_lama);
+        formData.append('password_baru', password_baru);
+        $.ajax({
+            type: 'GET',
+            url: '/admin/akun',
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function(data) {
+              if(data.status == 'ok') {
+                Swal.fire({
+                        icon: 'success',
+                        title: 'BERHASIL',
+                        text: 'Berhasil Di ubah',
+                          });
+              } else if(data.status == 'salah') {
+                alert('password mu salah!')
               }
             }
         });

@@ -104,5 +104,5 @@
 </div>
 @endsection
 @section('js-ajax')
-<script src="{{ asset('admin/js/footer/faq.js') }}"></script>
+<script src="{{ asset('assets/admin/js/footer/faq.js') }}"></script>
 @endsection

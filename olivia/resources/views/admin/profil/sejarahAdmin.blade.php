@@ -107,5 +107,5 @@
 </div>
 @endsection
 @section('js-ajax')
-<script src="{{ asset('admin/js/profil/sejarah.js') }}"></script>
+<script src="{{ asset('assets/admin/js/profil/sejarah.js') }}"></script>
 @endsection

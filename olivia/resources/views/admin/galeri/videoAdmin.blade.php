@@ -99,5 +99,5 @@
 </div>
 @endsection
 @section('js-ajax')
-<script src="{{ asset('admin/js/galeri/video.js') }}"></script>
+<script src="{{ asset('assets/admin/js/galeri/video.js') }}"></script>
 @endsection

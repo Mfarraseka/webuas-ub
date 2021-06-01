@@ -108,5 +108,5 @@
 </div>
 @endsection
 @section('js-ajax')
-<script src="{{ asset('admin/js/home/slider.js') }}"></script>
+<script src="{{ asset('assets/admin/js/home/slider.js') }}"></script>
 @endsection

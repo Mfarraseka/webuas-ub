@@ -136,5 +136,5 @@
 </div>
 @endsection
 @section('js-ajax')
-<script src="{{ asset('admin/js/pengumuman.js') }}"></script>
+<script src="{{ asset('assets/admin/js/pengumuman.js') }}"></script>
 @endsection
