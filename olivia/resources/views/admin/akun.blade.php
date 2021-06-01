@@ -119,7 +119,11 @@
         var password_confirm = $('input[name=password-confirm]').val();
         var nama = $('input[name=nama]').val();
         var gambar = $('#file')[0].files[0];
-        // console.log(gambar)
+
+        formData.append('password_lama', password_lama);
+        formData.append('password_baru', password_baru);
+        formData.append('nama', nama);
+        formData.append('gambar', gambar);
         if(gambar) {
           formData.append("gambar", gambar);
           $.ajax({
@@ -140,13 +144,8 @@
               }
             }
         });
-        } else if(password_lama == '' || password_confirm == '' || password_baru == '') {
-          // Swal.fire({
-          //               icon: 'error',
-          //               title: 'COBA KEMBALI',
-          //               text: 'SEMUA WAJIB DI ISI !',
-          //                 });
-          formData.append('nama', nama);
+        } else if(nama) {
+        formData.append('nama', nama);
           $.ajax({
             type: 'POST',
             url: '/admin/akun',
@@ -165,9 +164,13 @@
               }
             }
         });
+      } else if(password_lama == '' || password_confirm == '' || password_baru == '') {
+          Swal.fire({
+                        icon: 'error',
+                        title: 'COBA KEMBALI',
+                        text: 'SEMUA WAJIB DI ISI !',
+                          });
         } else if(password_baru == password_confirm) {
-        formData.append('password_lama', password_lama);
-        formData.append('password_baru', password_baru);
         $.ajax({
             type: 'GET',
             url: '/admin/akun',

@@ -95,12 +95,12 @@ class AkunController
                             'status' => 'gagal'
                         ]);
                     }
-        } else if($nama != null) {
+        } else if($nama) {
             DB::table('users')->where('id', auth()->user()->id)->update(['name' => $nama]);
             return response()->json([
                 'status' => 'ok'
             ]);
-        } else {
+        } else if($passwordLama) {
         $cek = Hash::check($passwordLama, $passwordSekarang);
         if($cek) {
             $cekInput = DB::table('users')->where('id', auth()->user()->id)->update([
@@ -115,6 +115,25 @@ class AkunController
         return response()->json([
             'status' => 'salah'
         ]);
+        } else {
+            //gambar
+            $namaOriFile = $gambar->getClientOriginalName();
+                    $fileName = time().'_'.$namaOriFile;
+                    $filePath = "assets/image/akun";
+                    $gambar->move($filePath, $fileName);
+                    //hapus file
+                    $gambarPathHapus = DB::table('users')->where('id', auth()->user()->id)->value('gambar');
+                    File::delete($gambarPathHapus);
+                    $cek = Hash::check($passwordLama, $passwordSekarang);
+                    if($cek) {
+                        $data = [
+                            "gambar" => $filePath."/".$fileName,
+                            "nama" => $nama,
+                            "password" => Hash::make($passwordBaru)
+                        ];
+                        DB::table('users')->where('id', auth()->user()->id)->update($data);
+                    }
+            
         }
     }
 
