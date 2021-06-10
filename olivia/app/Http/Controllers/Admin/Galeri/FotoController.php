@@ -26,12 +26,13 @@ class FotoController
 
     public function getFotoDataTable()
     {
+        
         $data = DB::table('foto')
         ->get();
         return Datatables::of($data)
         ->addIndexColumn()
         ->addColumn('aksi', function($row){
-            $btn = '<a href="javascript:void(0)" data-id="'.$row->id.'" class="btn-edit-ofto" style="font-size: 18pt; text-decoration: none;" class="mr-3">
+            $btn = '<a href="javascript:void(0)" data-id="'.$row->id.'" class="btn-edit-foto" style="font-size: 18pt; text-decoration: none;" class="mr-3">
             <i class="fas fa-pen-square"></i>
             </a>';
             $btn = $btn. '<a href="javascript:void(0)" data-id="'.$row->id.'" data-nama="'.$row->nama.'" class="btn-delete-foto" style="font-size: 18pt; text-decoration: none; color:red;">
@@ -39,6 +40,14 @@ class FotoController
             </a>';
             return $btn;
           })
+          ->addColumn('url', function($row){
+            $url = $row->foto;
+            $html = '<a href="'.$url.'" class="btn-edit-Foto" style="font-size: 18pt; text-decoration: none;" class="mr-3">
+            '.$url.'
+            </a>';
+            return $html;
+          })
+        
         ->rawColumns(['aksi'])
         ->make(true);
     }
@@ -65,12 +74,13 @@ class FotoController
      */
     public function store(Request $request)
     {   
-        $validator = Validator::make($request->all(), [
+        $rules = array (
             'nama' => 'required',
             'tahun' => 'required',
-            'filename' => 'required',
+            'filename' =>'required',
             'filename.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:3048'
-        ]);
+        );
+        $validator = Validator::make($request->all(), $rules); 
         if($validator->passes()) {
             if($request->hasfile('filename'))
             {
@@ -117,6 +127,10 @@ class FotoController
     public function edit($id)
     {
         //
+        $data = DB::table('foto')->where('id', $id)->get();
+        return response()->json([
+            'data' => $data
+            ]);
     }
 
     /**
@@ -128,7 +142,43 @@ class FotoController
      */
     public function update(Request $request, $id)
     {
-        //
+        {
+            $rules = array (
+                'nama' => 'required',
+                'tahun' => 'required',
+                'filename' =>'required',
+                'filename.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:3048'
+            );
+            $validator = Validator::make($request->all(), [
+                'nama' => 'required',
+                'tahun' => 'required',
+                'filename' => 'required',
+                'filename.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:3048'
+            ]);
+            if($validator->passes()) {
+                if($request->hasfile('filename'))
+                {
+                    foreach($request->file('filename') as $image)
+                    {
+                        $name=$image->getClientOriginalName();
+                        $image->move(public_path().'/assets/image/galeri/foto/', $name);  // your folder path
+                        $data[] = $name;  
+                    }
+                }
+                
+                $foto = DB::table('foto')->insert([
+                    'nama' => $request->nama,
+                    'tahun' => $request->tahun,
+                    'foto' => json_encode($data),
+                    'created_at' =>  \Carbon\Carbon::now()
+                ]);
+                if($foto) {
+                    return back()->with('success', 'Image berhasil di upload');
+                }
+            }
+    
+            return back()->with('error', $validator->errors()->first());
+        }   
     }
 
     /**
@@ -139,6 +189,11 @@ class FotoController
      */
     public function destroy($id)
     {
-        //
+    
+            $hapus = DB::table('foto')->where('id', $id)->delete();
+            if($hapus) {
+                return back()->with('success', 'Image berhasil di upload');
+            }
+            return back()->with('error', $validator->errors()->first());
     }
 }

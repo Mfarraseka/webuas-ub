@@ -11,10 +11,8 @@
                         <div class="hero-text">
 
                             <h2>Building Up <br> Noble Future</h2>
-
-                            <p>Pelopor dan Pembaharu dengan Reputasi <br> Internasional dalam Ilmu Pengetahuan dan Teknologi
-                            </p>
-                            <a href="/" class="btn btn-bp">Join Us</a>
+                                <br>
+                            <a href="{{ url('login') }}" class="btn btn-bp">Join Us</a>
                         </div>
                     </div>
                     <div class="col-12 col-md-6">

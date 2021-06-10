@@ -15,7 +15,7 @@
                                   <div class="card">
                                     <div class="card-header card-header-primary">
                                       <h4 class="card-title">Edit Akun</h4>
-                                      <p class="card-category">Lengkapi Akunmu</p>
+                                      <p class="card-category">Ubah Akun Admin</p>
                                     </div>
                                     <div class="card-body">
                                       <!-- <form id="form-update"> -->

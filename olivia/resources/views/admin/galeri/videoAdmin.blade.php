@@ -43,10 +43,10 @@
                 <form id="form-tambah-video">
                     @csrf
 
-                    <label for="judulBerita">Keterangan Video</label>
+                    <label for="JudulVideo">Keterangan Video</label>
                     <input type="text" class="form-control" name="nama">
                     
-                    <label for="judulBerita">URL Video</label>
+                    <label for="JudulVideo">URL Video</label>
                     <input type="text" class="form-control" name="url">
 
                     <div class="modal-footer">

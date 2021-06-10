@@ -48,7 +48,7 @@
                                     <?php } ?>
                             </td>
                             <td>
-                            <a href="javascript:void(0)" data-id="{{$image->id}}" data-nama="{{$image->nama}}" class="btn-delete-foto" style="font-size: 18pt; text-decoration: none; color:red;">
+                            <a href="{{url('admin/foto/delete')}}/{{($image->id)}}" data-id="{{$image->id}}" data-nama="{{$image->nama}}" class="btn-delete-foto" style="font-size: 18pt; text-decoration: none; color:red;">
                                 <i class="fas fa-trash"></i>
                             </a>
                             </td>
@@ -145,5 +145,5 @@
 </div>
 @endsection
 @section('js-ajax')
-<script src="{{ asset('assets/admin/js/galeri/foto.js') }}"></script>
+<script src="{{ asset('admin/js/galeri/foto.js') }}"></script>
 @endsection

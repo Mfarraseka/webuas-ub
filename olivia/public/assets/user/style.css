@@ -691,7 +691,7 @@ img {
 
 .portfolio-menu {
     margin-bottom: 100px;
-    margin-top: -10px;
+    margin-top: -1px;
 }
 
 .portfolio-menu > p {
@@ -1009,7 +1009,7 @@ span.accor-open {
 }
 
 .bradcumbContent h2 {
-    color: #fff;
+    color: rgb(0, 0, 0);
     font-size: 60px;
 }
 
@@ -1051,7 +1051,7 @@ span.accor-open {
 }
 
 .few-words-contents {
-    background-color: #5095a5;
+    background-color: #ffffff;
 }
 
 .few-words-text .section-heading {
@@ -1059,7 +1059,7 @@ span.accor-open {
 }
 
 .few-words-text .section-heading h2 {
-    color: #fff;
+    color: rgb(0, 0, 0);
 }
 
 .few-words-text > p {

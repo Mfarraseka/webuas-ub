@@ -20,6 +20,7 @@
     <link href="{{ asset('assets/user/style.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/user/custom.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Responsive CSS -->
     <link href="{{ asset('assets/user/css/responsive.css') }}" rel="stylesheet">
@@ -53,6 +54,7 @@
   firebase.analytics();
 </script>
 <!-- end firebase -->
+
  
     <div id="preloader">
         <div class="olv-preloader"></div>
@@ -87,13 +89,13 @@
                                     </div>
 
 
-                                    <div class="dropdown">
+                                    <!--<div class="dropdown">
                                        <li class="nav-item dropdown-toggle nav-link" id="dropdownMenuButton" data-toggle="dropdown">Info</li>
                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                           <a class="dropdown-item" href="{{ url('berita') }}">Berita</a>
                                           <a class="dropdown-item" href="{{ url('pengumuman') }}">Pengumuman</a>
                                        </div>
-                                    </div>
+                                    </div> -->
                                     <li class="nav-item @if(Route::is('faq')) active @endif"><a class="nav-link" href="{{ url('faq') }}">FAQ</a></li>
                                 </ul>
                                 <!-- Search Form Area Start -->
@@ -156,6 +158,7 @@
             </div>
         </div>
     </header>
+   
     
     @yield('content')
     

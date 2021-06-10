@@ -3,15 +3,15 @@
 <title>Galeri</title>
 @endsection
 @section('content')
-<div class="olv-breadcumb-area" style="background-image: url({{ asset('user/img/core-img/b.png') }});">
+<div class="olv-breadcumb-area" style="background-image: url({{ asset('assets/user/img/core-img/breadcumb.png') }});">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12">
                     <div class="bradcumbContent">
-                        <h2>Gallery</h2>
+                        <h2>Video</h2>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Video</li>
                             </ol>
                         </nav>

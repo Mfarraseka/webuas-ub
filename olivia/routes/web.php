@@ -148,9 +148,9 @@ Route::group(['middleware' => ['auth', 'checkRole:1']],function() {
             Route::get('data', 'Admin\Galeri\FotoController@getFotoDataTable');
             Route::get('datatable', 'Admin\Galeri\FotoController@loadDataTable');
             Route::post('/', 'Admin\Galeri\FotoController@store');
-            // Route::get('edit/{id}', 'Admin\AdminArtikelController@edit');
-            // Route::post('update/{id}', 'Admin\AdminArtikelController@update');
-            // Route::get('delete/{id}', 'Admin\AdminArtikelController@destroy');
+            Route::get('edit/{id}', 'Admin\Galeri\FotoController@edit');
+            Route::post('update/{id}', 'Admin\Galeri\FotoController@update');
+            Route::get('delete/{id}', 'Admin\Galeri\FotoController@destroy');
         });
         //VIDEO
         Route::prefix('video')->group(function () {

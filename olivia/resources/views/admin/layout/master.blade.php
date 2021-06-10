@@ -65,7 +65,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('dashboard')}}">
         <div class="sidebar-brand-text mx-3">Universitas Brawijaya </sup></div>
       </a>
 
@@ -112,11 +112,11 @@
                 <div id="collapseHome" class="collapse" aria-labelledby="headingHome" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Home</h6>
-                        <a class="collapse-item" href="{{ url('admin/lomba') }}">Lomba</a>
-                        <a class="collapse-item" href="{{ url('admin/pengumuman') }}">Pengumuman</a>
+                      <!--  <a class="collapse-item" href="{{ url('admin/lomba') }}">Lomba</a> -->
+                        <a class="collapse-item" href="{{ url('admin/artikel') }}">Arikel</a>
                         <a class="collapse-item" href="{{ url('admin/berita') }}">Berita</a>
-                        <a class="collapse-item" href="{{ url('admin/slider') }}">Slider</a>
-                        <a class="collapse-item" href="{{ url('admin/infografis') }}">Info Grafis</a>
+                       <!-- <a class="collapse-item" href="{{ url('admin/slider') }}">Slider</a> -->
+                      <!--  <a class="collapse-item" href="{{ url('admin/infografis') }}">Info Grafis</a> -->
                     </div>
                 </div>
             </li>

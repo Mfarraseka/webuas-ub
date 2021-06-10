@@ -2,7 +2,7 @@
                         <thead>
                             <tr>
                                 <th>No.</th>
-                                <th>nama</th> 
+                                <th>Nama</th> 
                                 <th>Gambar</th>
                                 <th>Aksi</th>
                             </tr>

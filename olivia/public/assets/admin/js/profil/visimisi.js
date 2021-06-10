@@ -133,9 +133,11 @@ $(document).ready(function() {
             type: 'GET',
             url: '/admin/visimisi/edit/' + id,
             success: function(data) {
+                console.log(data.data[0].visi);
                 $("#editVisimisiModal").modal('show');
                 $('input[name=judul-edit]').val(data.data[0].judul);
-                tinymce.get('deskripsi-visimisi-edit').setContent(data.data[0].deskripsi);
+                tinymce.get('deskripsi-visi-edit').setContent(data.data[0].visi);
+                tinymce.get('deskripsi-misi-edit').setContent(data.data[0].misi);
                 $('input[name=edit-id]').val(id);
             }
         });
