@@ -44,7 +44,7 @@
                             <td>{{$image->nama}}</td>
                             <td> 
                                 <?php foreach(json_decode($image->foto)as $picture) { ?>
-                                    <img src="{{ asset('/image/galeri/foto/'.$picture) }}" style="height:120px; width:200px"/>
+                                    <img src="{{ asset('assets/image/galeri/foto/'.$picture) }}" style="height:120px; width:200px"/>
                                     <?php } ?>
                             </td>
                             <td>
